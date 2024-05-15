@@ -26,6 +26,34 @@ namespace notatnik
             InitializeComponent();
         }
 
+        private void Cut(object sender, RoutedEventArgs e)
+        {
+            text.Copy();
+            Delete();
+        }
+
+        private void Copy(object sender, RoutedEventArgs e)
+        {
+            text.Copy();
+        }
+
+        private void Paste(object sender, RoutedEventArgs e)
+        {
+            text.Paste();
+        }
+
+        private void DeleteEv(object sender, RoutedEventArgs e)
+        {
+            Delete();
+        }
+
+        private void Delete()
+        {
+            int selectionStart = text.SelectionStart;
+            text.Text = text.Text.Remove(selectionStart, text.SelectionLength);
+            text.Select(selectionStart, 0);
+        }
+
         
     }
 }
