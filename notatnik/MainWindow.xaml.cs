@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.ComponentModel;
+using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +19,13 @@ namespace notatnik
     /// </summary>
     public partial class MainWindow : Window
     {
+        string path = "";
+        bool saved = false;
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        
     }
 }

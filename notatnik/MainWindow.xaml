@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:notatnik"
         mc:Ignorable="d"
+        KeyDown="ShortcutCheck"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
@@ -13,23 +14,23 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="Plik">
-                <MenuItem Header="Otwórz" InputGestureText="Ctrl+O" Click="Open"/>
-                <MenuItem Header="Zapisz" InputGestureText="Ctrl+S" Click="Save"/>
-                <MenuItem Header="Zapisz jako" Click="SaveAs"/>
+                <MenuItem Header="Otwórz" InputGestureText="Ctrl+O" Click="OpenEv"/>
+                <MenuItem Header="Zapisz" InputGestureText="Ctrl+S" Click="SaveEv"/>
+                <MenuItem Header="Zapisz jako" Click="SaveAsEv"/>
                 <MenuItem Header="Zakończ" Click="Close"/>
             </MenuItem>
             <MenuItem Header="Edycja">
                 <MenuItem Header="Wytnij" InputGestureText="Ctrl+X" Click="Cut"/>
                 <MenuItem Header="Kopiuj" InputGestureText="Ctrl+C" Click="Copy"/>
                 <MenuItem Header="Wklej" InputGestureText="Ctrl+V" Click="Paste"/>
-                <MenuItem Header="Usuń" InputGestureText="Delete" Click="Delete"/>
+                <MenuItem Header="Usuń" InputGestureText="Delete" Click="DeleteEv"/>
             </MenuItem>
             <MenuItem Header="Pomoc">
                 <MenuItem Header="O programie"/>
             </MenuItem>
         </Menu>
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-            <TextBox x:Name="text" AcceptsReturn="False" AcceptsTab="True" SpellCheck.IsEnabled="True"/>
+            <TextBox x:Name="text" AcceptsReturn="False" AcceptsTab="True" SpellCheck.IsEnabled="True" TextChanged="TextChanged"/>
         </ScrollViewer>
     </Grid>
 </Window>
